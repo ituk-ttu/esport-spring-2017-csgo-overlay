@@ -1,0 +1,48 @@
+.container
+    .row
+        .col-xs-12
+            .panel.panel-default
+                .panel-heading View
+                .panel-body
+                    button.btn(ng-repeat="view in views"
+                            ng-class="activeView.id === view.id ? 'btn-primary' : 'btn-default'"
+                            ng-click="setView(view)") {{view.name}}
+                    p.text-primary {{state}}
+    .row
+        .col-xs-12.col-sm-6
+            .panel.panel-primary
+                .panel-heading Blue Team
+                .panel-body
+                    .form-group
+                        label.control-label Team Name
+                        input.form-control(ng-model="unsaved.teams.blue.name")
+                    .form-group
+                        label.control-label Team Score
+                        input.form-control(ng-model="unsaved.teams.blue.score" type="number")
+        .col-xs-12.col-sm-6
+            .panel.panel-danger
+                .panel-heading Red Team
+                .panel-body
+                    .form-group
+                        label.control-label Team Name
+                        input.form-control(ng-model="unsaved.teams.red.name")
+                    .form-group
+                        label.control-label Team Score
+                        input.form-control(ng-model="unsaved.teams.red.score" type="number")
+    .row
+        .col-xs-12.col-sm-6
+            .panel.panel-default
+                .panel-heading Left Caster
+                .panel-body
+                    .form-group
+                        label.control-label Name
+                        input.form-control(ng-model="unsaved.casters.left")
+        .col-xs-12.col-sm-6
+            .panel.panel-default
+                .panel-heading Right Caster
+                .panel-body
+                    .form-group
+                        label.control-label Name
+                        input.form-control(ng-model="unsaved.casters.right")
+
+button.btn.btn-success.btn-save(ng-click="save()" ng-disabled="working") Save

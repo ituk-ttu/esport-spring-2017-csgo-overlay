@@ -1,0 +1,23 @@
+doctype HTML
+head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible" content="IE-edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    meta(name="theme-color" content="#870042")
+    title overlay
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-utils/0.1.1/angular-ui-utils.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js")
+    script(src="//cdn.rawgit.com/auth0/angular-storage/master/dist/angular-storage.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.11/angular-ui-router.min.js")
+    script(src="assets/js/app.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-socket-io/0.7.0/socket.min.js")
+    link(rel="stylesheet" href="assets/css/master.css")
+    link(rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=latin-ext")
+
+html(ng-app="overlay")
+    body
+        .main-container(ui-view)
