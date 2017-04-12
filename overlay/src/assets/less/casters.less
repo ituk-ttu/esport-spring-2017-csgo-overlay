@@ -1,0 +1,71 @@
+.casters {
+  .logo-box {
+    transition: all 250ms cubic-bezier(0, 0.8, 1, 1);
+    &.loading1 {
+      transition: all 500ms cubic-bezier(0.8, 0, 1, 1);
+      &.loading2 {
+        transform: translateY(170%) scale(0.1);
+      }
+      transform: scale(0.1);
+    }
+    position: absolute;
+    bottom: 85px;
+    left: 615px;
+  }
+  .caster-sign {
+    transition: all 250ms cubic-bezier(0, 0.8, 1, 1);
+    &.loading {
+      transition: all 250ms cubic-bezier(0.8, 0, 1, 1);
+    }
+    height: 128px;
+    width: 712px;
+    position: absolute;
+    bottom: 120px;
+    font-weight: 500;
+    p {
+      font-size: 33px;
+      text-transform: uppercase;
+      margin: 0;
+      display: inline-block;
+      &.name {
+        font-weight: 900;
+      }
+    }
+    img {
+      position: absolute;
+      top: 0;
+    }
+    &.caster-left {
+      &.loading {
+        transform: translateX(-100%);
+      }
+      img {
+        left: 0;
+      }
+      left: 0;
+      .texts {
+        padding: 110px;
+      }
+    }
+    &.caster-right {
+      &.loading {
+        transform: translateX(100%);
+      }
+      img {
+        right: 0;
+      }
+      right: 0;
+      .texts {
+        padding: 160px;
+      }
+    }
+    .top-row {
+      position: absolute;
+      top: 26px;
+    }
+    .bottom-row {
+      position: absolute;
+      bottom: 26px;
+    }
+  }
+}

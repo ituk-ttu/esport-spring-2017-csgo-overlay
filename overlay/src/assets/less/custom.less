@@ -1,10 +1,14 @@
-html, body, .main-container {
+html, body, .main-container, .full-container {
   height: 1080px !important;
+  width: 1920px !important;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
   color: #f1f1f1;
+  overflow: hidden;
 }
-.main-container {
+body {
+  //background-image: url('../img/backdrop.png');
 }
 .center-flex {
   display:flex;
@@ -12,158 +16,6 @@ html, body, .main-container {
   align-items:center;
   height: 100%;
 }
-.afk-card {
-  background-image: url('../img/card.bg.png');
-  background-size: cover;
-  width: 600px;
-  height: 250px;
-  border-top: 5px solid #eb1010;
-  margin-top: 700px;
-  transition:all 0.3s ease-out;
-  .afk-title, .afk-text {
-    text-align: center;
-  }
-  .afk-text {
-    font-size: 1.35em;
-  }
-  &.loading {
-    transform: translateY(150%);
-  }
-}
-.game-logo-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1920px;
-  height: 200px;
-  background-image: url('../img/card.bg.light.png');
-  background-size: cover;
-  border-bottom: 5px solid #eb1010;
-  transition:all 0.3s ease-out;
-  .logo{
-    width: 500px;
-    transition:all 0.3s ease-out;
-    margin: 0 -20px;
-    &.loading{
-      transform: scale(0.65);
-    }
-  }
-  &.loading{
-    transform: translateY(-100%);
-  }
-}
 .text-center {
   text-align: center;
-}
-.timetable-title {
-  font-size: 4em;
-}
-.table-wrapper {
-  width: 1920px;
-}
-.timetable-table {
-  margin-left: auto;
-  margin-right: auto;
-  td {
-    text-align: left;
-  }
-  tr {
-    padding: 10px;
-    font-size: 1.6em;
-  }
-  .event {
-    padding-left: 25px;
-  }
-}
-.timetable-container {
-  transition: all 900ms cubic-bezier(0.000, 0.560, 0.245, 1.000);
-  &.loading {
-    transform: translateY(100%);
-  }
-}
-.timetable-row {
-  transition: all 0.2s ease-out;
-  &.loading {
-    transform: translateX(-5%);
-    opacity: 0;
-  }
-}
-.ig-team-card {
-  width: 245px;
-  position: fixed;
-  top: 100px;
-  background-size: cover;
-  transition: all 0.2s ease-out;
-  &.blue-team {
-    background-image: url('../img/card.bg.png');
-    left: 300px;
-    border-bottom: 3px solid #1059eb;
-    text-align: right;
-    h2 {
-      margin-right: 10px;
-      width: 225px;
-    }
-  }
-  &.red-team {
-    background-image: url('../img/card.bg.inv.png');
-    right: 300px;
-    border-bottom: 3px solid #eb1010;
-    text-align: left;
-    h2 {
-      margin-left: 10px;
-      width: 225px;
-    }
-  }
-  &.loading {
-    transform: translateY(-200%);
-  }
-}
-.ig-sponsor-box {
-  position: absolute;
-  height: 100px;
-  width: 294px;
-  right: 20px;
-  top: 100px;
-  text-align: center;
-  transition: all 0.2s ease-out;
-  img {
-    padding: 10px;
-    max-width: 274px;
-    max-height: 80px;
-  }
-  &.loading {
-    transform: translateY(-200%);
-  }
-}
-.full-container {
-  height: 1920px;
-  width: 1080px;
-}
-.caster {
-  position: absolute;
-  bottom: 100px;
-  width: 400px;
-  transition: all 0.2s ease-out;
-  h1 {
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-  &.caster-left {
-    background-image: url('../img/card.bg.png');
-    text-align: right;
-    left: 0;
-    border-right: 5px solid #eb1010;
-    &.loading {
-      transform: translateX(-100%);
-    }
-  }
-  &.caster-right {
-    background-image: url('../img/card.bg.inv.png');
-    text-align: left;
-    right: 0;
-    border-left: 5px solid #eb1010;
-    &.loading {
-      transform: translateX(100%);
-    }
-  }
 }

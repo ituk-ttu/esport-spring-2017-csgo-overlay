@@ -1,4 +1,10 @@
 {
   "startData": {},
-  "views": {}
+  "views": {
+    "casters": {
+      "transitionOutLength": 2000,
+      "scene": "cameracapture",
+      "overlay": "casters"
+    }
+  }
 }

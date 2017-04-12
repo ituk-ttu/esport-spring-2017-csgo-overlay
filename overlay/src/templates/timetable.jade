@@ -1,0 +1,8 @@
+.timetable-container.center-flex.loading
+    .container
+        h1.timetable-title.text-center.loading Schedule
+        .table-wrapper.text-center
+            table.timetable-table
+                tr(ng-repeat="row in data.timetable").timetable-row.loading
+                    td.time: strong {{row.time}}
+                    td.event {{row.event}}
