@@ -9,14 +9,17 @@ var config = JSON.parse(fs.readFileSync("config.json"));
 var data = config.startData;
 var activeView = config.views[0];
 var views = config.views;
+//var viewsAfterReplay = views["afk"];
+var playingReplay = false;
+var replayLength = 10000;
 
-var obsLocation = "localhost";
-var obsPassword = "pw";
+var obsLocation = "10.0.23.127";
+var obsPassword = "password";
 var obsTransitionLength = 300;
 
 obs.onConnectionClosed = function() {
     console.log(clk.red.bold('OBS connection closed!'));
-    obs.connect(obsLocation, obsPassword);
+    obs.connect(obsLocation/*, obsPassword*/);
     console.log(clk.yellow.bold('Trying to reconnect...'));
 };
 
@@ -77,6 +80,19 @@ io.on('connection', function(socket) {
         data = payload;
         console.log(clk.blue("Updates retrieved"));
         io.emit("data", data);
+    });
+    socket.on('replay', function() {
+        playingReplay = true;
+        io.emit("animate", "out");
+        setTimeout(function () {
+            obs.setCurrentScene("replay");
+        }, activeView.transitionOutLength);
+    });
+    socket.on('endReplay', function() {
+        obs.setCurrentScene(activeView.scene);
+        setTimeout(function () {
+            io.emit("animate", "out");
+        }, obsTransitionLength);
     });
 });
 

@@ -2,9 +2,34 @@
   "startData": {},
   "views": {
     "casters": {
+      "id": "casters",
       "transitionOutLength": 2000,
       "scene": "cameracapture",
       "overlay": "casters"
+    },
+    "maps": {
+      "id": "maps",
+      "transitionOutLength": 2000,
+      "scene": "backdrop",
+      "overlay": "maps"
+    },
+    "map": {
+      "id": "map",
+      "transitionOutLength": 2000,
+      "scene": "backdrop",
+      "overlay": "map"
+    },
+    "afk": {
+      "id": "afk",
+      "transitionOutLength": 2000,
+      "scene": "backdrop",
+      "overlay": "afk"
+    },
+    "game": {
+      "id": "game",
+      "transitionOutLength": 2000,
+      "scene": "gamecapture",
+      "overlay": "afk"
     }
   }
 }

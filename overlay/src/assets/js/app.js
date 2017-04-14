@@ -1,6 +1,6 @@
 // Environment variables
 
-socketBase = "localhost:3000";
+socketBase = "10.0.25.50:3000";
 
 var app = angular.module("overlay", [
     "ui.router",
@@ -35,15 +35,15 @@ var app = angular.module("overlay", [
             templateUrl: "templates/afk.html",
             controller: "afkController"
         })
-        .state("timetable", {
-            url: "/timetable",
-            templateUrl: "templates/timetable.html",
-            controller: "timetableController"
+        .state("maps", {
+            url: "/maps",
+            templateUrl: "templates/maps.html",
+            controller: "mapsController"
         })
-        .state("ingame", {
-            url: "/ingame",
-            templateUrl: "templates/game.html",
-            controller: "gameController"
+        .state("map", {
+            url: "/map",
+            templateUrl: "templates/map.html",
+            controller: "mapController"
         })
         .state("casters", {
             url: "/casters",

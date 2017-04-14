@@ -1,0 +1,15 @@
+.full-container.map
+    .teams
+        .team-left.team.loading
+            img(src="assets/img/team-left.svg")
+            p {{data.teams.left.name}}
+        .team-right.team.loading
+            img(src="assets/img/team-right.svg")
+            p {{data.teams.right.name}}
+    .maps-container
+        .map.map-1.loading(ng-class="data.map.name")
+            .map-name
+                p {{data.map.name}}
+            .bottom-row
+                img(src="assets/img/map-lower.svg")
+                p {{data.map.text}}

@@ -1,8 +1,8 @@
 // Environment variables
 
-socketBase = "10.0.24.48:3001";
+socketBase = "10.0.25.50:3000";
 
-var app = angular.module("esport16FallLoLControl", [
+var app = angular.module("controlPanel", [
     "ui.router",
     "ui.utils",
     "angular-storage",

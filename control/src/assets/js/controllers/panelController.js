@@ -14,7 +14,15 @@ app.controller("panelController", ["$q", "$scope", "$stateParams", "store", "soc
         };
 
         $scope.setView = function(view) {
-            $rootScope.socket.emit('view', view);
+            $rootScope.socket.emit('setView', view.id);
+        };
+
+        $scope.playReplay = function() {
+            $rootScope.socket.emit('replay', null);
+        };
+
+        $scope.stopReplay = function() {
+            $rootScope.socket.emit('endReplay', null);
         };
 
         $scope.$watch(function() {

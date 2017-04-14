@@ -5,44 +5,72 @@
                 .panel-heading View
                 .panel-body
                     button.btn(ng-repeat="view in views"
-                            ng-class="activeView.id === view.id ? 'btn-primary' : 'btn-default'"
-                            ng-click="setView(view)") {{view.name}}
-                    p.text-primary {{state}}
+                            ng-class="activeView === view.id ? 'btn-primary' : 'btn-default'"
+                            ng-click="setView(view)") {{view.id}}
+    .row
+        .col-xs-12
+            .panel.panel-default
+                .panel-heading Replay
+                .panel-body
+                    button.btn.btn-success(ng-click="playReplay()") Replay
+                    button.btn.btn-danger(ng-click="stopReplay()") StopReplay
     .row
         .col-xs-12.col-sm-6
             .panel.panel-primary
-                .panel-heading Blue Team
+                .panel-heading LEFT Team
                 .panel-body
                     .form-group
                         label.control-label Team Name
-                        input.form-control(ng-model="unsaved.teams.blue.name")
-                    .form-group
-                        label.control-label Team Score
-                        input.form-control(ng-model="unsaved.teams.blue.score" type="number")
+                        input.form-control(ng-model="unsaved.teams.left.name")
         .col-xs-12.col-sm-6
             .panel.panel-danger
-                .panel-heading Red Team
+                .panel-heading RIGHT Team
                 .panel-body
                     .form-group
                         label.control-label Team Name
-                        input.form-control(ng-model="unsaved.teams.red.name")
-                    .form-group
-                        label.control-label Team Score
-                        input.form-control(ng-model="unsaved.teams.red.score" type="number")
+                        input.form-control(ng-model="unsaved.teams.right.name")
     .row
         .col-xs-12.col-sm-6
             .panel.panel-default
                 .panel-heading Left Caster
                 .panel-body
                     .form-group
-                        label.control-label Name
-                        input.form-control(ng-model="unsaved.casters.left")
+                        label.control-label First Name
+                        input.form-control(ng-model="unsaved.casters.left.firstName")
+                    .form-group
+                        label.control-label Nickname
+                        input.form-control(ng-model="unsaved.casters.left.nickname")
+                    .form-group
+                        label.control-label Last Name
+                        input.form-control(ng-model="unsaved.casters.left.lastName")
         .col-xs-12.col-sm-6
             .panel.panel-default
                 .panel-heading Right Caster
                 .panel-body
                     .form-group
-                        label.control-label Name
-                        input.form-control(ng-model="unsaved.casters.right")
-
+                        label.control-label First Name
+                        input.form-control(ng-model="unsaved.casters.right.firstName")
+                    .form-group
+                        label.control-label Nickname
+                        input.form-control(ng-model="unsaved.casters.right.nickname")
+                    .form-group
+                        label.control-label Last Name
+                        input.form-control(ng-model="unsaved.casters.right.lastName")
+        .col-xs-12
+            .panel.panel-default
+                .panel-heading Map
+                .panel-body
+                    .form-group
+                        label.control-label Next map
+                        select.form-control(ng-model="unsaved.map.name")
+                            option cache
+                            option cobblestone
+                            option inferno
+                            option mirage
+                            option nuke
+                            option overpass
+                            option train
+                    .form-group
+                        label.control-label Bottom
+                        input.form-control(ng-model="unsaved.map.text")
 button.btn.btn-success.btn-save(ng-click="save()" ng-disabled="working") Save

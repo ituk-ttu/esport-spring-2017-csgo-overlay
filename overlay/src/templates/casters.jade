@@ -5,15 +5,15 @@
         img(src="assets/img/left-caster.svg")
         .texts
             .top-row
-                p.name Polina
-                p "-Summer"
+                p.name {{data.casters.left.firstName}}
+                p  "{{data.casters.left.nickname}}"
             .bottom-row
-                p.name Rubtsova
+                p.name {{data.casters.left.lastName}}
     .caster-right.caster-sign.loading
         img(src="assets/img/right-caster.svg")
         .texts
             .top-row
-                p.name Polina
-                p  "-Summer"
+                p.name {{data.casters.right.firstName}}
+                p  "{{data.casters.right.nickname}}"
             .bottom-row
-                p.name Rubtsova
+                p.name {{data.casters.right.lastName}}
