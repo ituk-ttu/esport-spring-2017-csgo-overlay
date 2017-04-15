@@ -19,13 +19,13 @@ app.controller("mapsController", ["$q", "$scope", "$stateParams", "store", "sock
                 $('.map-3').removeClass('loading');
             }, 700);
             $timeout(function() {
-                $('.map-2').addClass('active');
-            }, 2200);
+                $scope.animateInActive($scope.data.bo3.active);
+            }, 1800);
         };
 
         $scope.animateOut = function() {
             $timeout(function() {
-                $('.active').removeClass('active');
+                $scope.animateOutActive();
             }, 0);
             $timeout(function() {
                 $('.team-left').addClass('loading');
@@ -44,9 +44,26 @@ app.controller("mapsController", ["$q", "$scope", "$stateParams", "store", "sock
             }, 1300);
         };
 
+
+        $scope.animateInActive = function (map) {
+            if (map !== "NONE" && map < 4 && map > 0) {
+                $timeout(function () {
+                    $('.map-' + map).addClass('active');
+                }, 400);
+            }
+        };
+
+        $scope.animateOutActive = function () {
+            $('.active').removeClass('active');
+        };
+
         $scope.$watch(function() {
             return $rootScope.data;
         }, function() {
+            if ($scope.data.bo3.active !== $rootScope.data.bo3.active) {
+                $scope.animateOutActive();
+                $scope.animateInActive($rootScope.data.bo3.active)
+            }
             $scope.data = $rootScope.data;
         }, true);
 
