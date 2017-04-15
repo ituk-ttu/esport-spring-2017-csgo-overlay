@@ -7,6 +7,10 @@ app.controller("panelController", ["$q", "$scope", "$stateParams", "store", "soc
         $scope.views = null;
         $scope.activeView = null;
 
+        $scope.isDirty = function (fieldName) {
+            return (_.at($scope.unsaved, fieldName)[0] || "") != (_.at($rootScope.data, fieldName)[0] || "");
+        };
+
         $scope.save = function() {
             $scope.working = true;
             $rootScope.socket.emit('save', $scope.unsaved);
@@ -34,7 +38,7 @@ app.controller("panelController", ["$q", "$scope", "$stateParams", "store", "soc
         $scope.$watch(function() {
             return $rootScope.data;
         }, function() {
-            $scope.unsaved = $rootScope.data;
+            $scope.unsaved = _.cloneDeep($rootScope.data);
         }, true);
 
         $scope.$watch(function() {

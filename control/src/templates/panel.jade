@@ -19,14 +19,14 @@
             .panel.panel-primary
                 .panel-heading LEFT Team
                 .panel-body
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('teams.left.name')}")
                         label.control-label Team Name
                         input.form-control(ng-model="unsaved.teams.left.name")
         .col-xs-12.col-sm-6
             .panel.panel-danger
                 .panel-heading RIGHT Team
                 .panel-body
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('teams.right.name')}")
                         label.control-label Team Name
                         input.form-control(ng-model="unsaved.teams.right.name")
     .row
@@ -34,33 +34,33 @@
             .panel.panel-default
                 .panel-heading Left Caster
                 .panel-body
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('casters.left.firstName')}")
                         label.control-label First Name
                         input.form-control(ng-model="unsaved.casters.left.firstName")
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('casters.left.nickname')}")
                         label.control-label Nickname
                         input.form-control(ng-model="unsaved.casters.left.nickname")
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('casters.left.lastName')}")
                         label.control-label Last Name
                         input.form-control(ng-model="unsaved.casters.left.lastName")
         .col-xs-12.col-sm-6
             .panel.panel-default
                 .panel-heading Right Caster
                 .panel-body
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('casters.right.firstName')}")
                         label.control-label First Name
                         input.form-control(ng-model="unsaved.casters.right.firstName")
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('casters.right.nickname')}")
                         label.control-label Nickname
                         input.form-control(ng-model="unsaved.casters.right.nickname")
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('casters.right.lastName')}")
                         label.control-label Last Name
                         input.form-control(ng-model="unsaved.casters.right.lastName")
         .col-xs-12
             .panel.panel-default
                 .panel-heading Map
                 .panel-body
-                    .form-group
+                    .form-group(ng-class="{'has-error':isDirty('map.name')}")
                         label.control-label Next map
                         select.form-control(ng-model="unsaved.map.name")
                             option cache
