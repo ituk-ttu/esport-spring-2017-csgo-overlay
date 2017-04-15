@@ -12,8 +12,8 @@
             .panel.panel-default
                 .panel-heading Replay
                 .panel-body
-                    button.btn.btn-success(ng-click="playReplay()") Replay
-                    button.btn.btn-danger(ng-click="stopReplay()") StopReplay
+                    button.btn.btn-success(ng-click="playReplay()") Start Replay
+                    button.btn.btn-danger(ng-click="stopReplay()") Stop Replay
     .row
         .col-xs-12.col-sm-6
             .panel.panel-primary
@@ -63,6 +63,7 @@
                     .form-group(ng-class="{'has-error':isDirty('map.name')}")
                         label.control-label Next map
                         select.form-control(ng-model="unsaved.map.name")
+                            option UNKNOWN
                             option cache
                             option cobblestone
                             option inferno
@@ -73,4 +74,59 @@
                     .form-group
                         label.control-label Bottom
                         input.form-control(ng-model="unsaved.map.text")
+        .col-xs-12
+            .panel.panel-default
+                .panel-heading BEST OF 3 MAPS
+                .panel-body
+                    h3 MAP 1
+                    .form-group
+                        label.control-label Next map
+                        select.form-control(ng-model="unsaved.bo3.maps.map1.name")
+                            option UNKNOWN
+                            option cache
+                            option cobblestone
+                            option inferno
+                            option mirage
+                            option nuke
+                            option overpass
+                            option train
+                    .form-group
+                        label.control-label Bottom
+                        input.form-control(ng-model="unsaved.bo3.maps.map1.text")
+                    h3 MAP 2
+                    .form-group
+                        label.control-label Next map
+                        select.form-control(ng-model="unsaved.bo3.maps.map2.name")
+                            option UNKNOWN
+                            option cache
+                            option cobblestone
+                            option inferno
+                            option mirage
+                            option nuke
+                            option overpass
+                            option train
+                    .form-group
+                        label.control-label Bottom
+                        input.form-control(ng-model="unsaved.bo3.maps.map2.text")
+                    h3 MAP 3
+                    .form-group
+                        label.control-label Next map
+                        select.form-control(ng-model="unsaved.bo3.maps.map3.name")
+                            option UNKNOWN
+                            option cache
+                            option cobblestone
+                            option inferno
+                            option mirage
+                            option nuke
+                            option overpass
+                            option train
+                    .form-group
+                        label.control-label Bottom
+                        input.form-control(ng-model="unsaved.bo3.maps.map3.text")
+                    h3 ACTIVE MAP
+                    select.form-control(ng-model="unsaved.bo3.active")
+                        option NONE
+                        option 1
+                        option 2
+                        option 3
 button.btn.btn-success.btn-save(ng-click="save()" ng-disabled="working") Save

@@ -21,14 +21,26 @@
     },
     "afk": {
       "id": "afk",
-      "transitionOutLength": 2000,
-      "scene": "backdrop",
+      "transitionOutLength": 0,
+      "scene": "afk",
       "overlay": "afk"
     },
     "game": {
       "id": "game",
       "transitionOutLength": 2000,
       "scene": "gamecapture",
+      "overlay": "afk"
+    },
+    "afkwtext": {
+      "id": "afkwtext",
+      "transitionOutLength": 100,
+      "scene": "afktext",
+      "overlay": "afk"
+    },
+    "plainCam": {
+      "id": "plainCam",
+      "transitionOutLength": 100,
+      "scene": "cameracapture",
       "overlay": "afk"
     }
   }
